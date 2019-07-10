@@ -15,7 +15,7 @@ class MealDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget buildContainer(BuildContext context,Widget child) {
+  Widget buildContainer(Widget child) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -25,7 +25,7 @@ class MealDetailScreen extends StatelessWidget {
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(10),
       height: 150,
-      width: MediaQuery.of(context).size.width * 0.85,
+      width: 300,
       child: child,
     );
   }
@@ -50,7 +50,7 @@ class MealDetailScreen extends StatelessWidget {
               ),
             ),
             buildSectionTitle(context, 'Ingredients'),
-            buildContainer( context,
+            buildContainer(
               ListView.builder(
                 itemBuilder: (ctx, index) => Card(
                       color: Theme.of(context).accentColor,
@@ -65,7 +65,7 @@ class MealDetailScreen extends StatelessWidget {
               ),
             ),
             buildSectionTitle(context, 'Steps'),
-            buildContainer(context,
+            buildContainer(
               ListView.builder(
                 itemBuilder: (ctx, index) => Column(
                       children: [
